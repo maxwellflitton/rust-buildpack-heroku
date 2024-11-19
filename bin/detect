@@ -1,0 +1,10 @@
+#!/bin/sh
+
+BUILD_DIR=${1:-}
+
+if [ -f "$BUILD_DIR/rust-server/Cargo.toml" ] && [ -f "$BUILD_DIR/frontend/package.json" ]; then
+    echo "Rust"
+    exit 0
+else
+    exit 1
+fi

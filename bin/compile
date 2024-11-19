@@ -1,0 +1,30 @@
+#!/bin/bash
+
+BUILD_DIR=${1:-}
+CACHE_DIR=${2:-}
+ENV_DIR=${3:-}
+BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
+
+# install dependencies
+
+echo "-----> installing dependencies"
+
+curl https://sh.rustup.rs -sSf | sh -s -- -y
+export PATH="$HOME/.cargo/bin:$PATH"
+
+rustup default stable
+
+
+echo "-----> frontend found"
+
+# Build frontend
+cd ${BUILD_DIR}/frontend
+npm install
+npm run build
+cd ..
+
+echo "-----> rust server found"
+
+# Build backend
+cd ${BUILD_DIR}/rust-server
+cargo build --release 

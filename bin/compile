@@ -12,6 +12,9 @@ echo "-----> installing dependencies"
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 export PATH="$HOME/.cargo/bin:$PATH"
 
+echo "installing npm"
+curl -qL https://npmjs.org/install.sh | sh
+
 rustup default stable
 
 

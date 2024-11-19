@@ -23,8 +23,11 @@ npm install
 npm run build
 cd ..
 
+echo "       done"
 echo "-----> rust server found"
 
 # Build backend
 cargo build -p actix-to-do-server --release
 cp ./target/release/actix-to-do-server $BUILD_DIR
+
+echo "       done"

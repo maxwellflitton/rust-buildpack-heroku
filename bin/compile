@@ -18,7 +18,7 @@ rustup default stable
 echo "-----> frontend found"
 
 # Build frontend
-cd ${BUILD_DIR}/frontend
+cd ./frontend
 npm install
 npm run build
 cd ..
@@ -26,5 +26,5 @@ cd ..
 echo "-----> rust server found"
 
 # Build backend
-cd ${BUILD_DIR}/rust-server
-cargo build --release 
+cargo build -p actix-to-do-server --release
+cp ./target/release/actix-to-do-server $BUILD_DIR

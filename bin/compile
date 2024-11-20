@@ -40,16 +40,16 @@ echo "-----> Building Rust server"
 cd "$BUILD_DIR/rust-server" || exit 1
 cargo build -p actix-to-do-server --release
 
-echo "Inspecting the build directory"
-ls -l "$BUILD_DIR"
-echo "Inspecting the rust server directory"
-ls -l "$BUILD_DIR/rust-server"
-echo "Inspecting the target directory"
-ls -l "$BUILD_DIR/rust-server/target"
-echo "Inspecting the release directory"
-ls -l "$BUILD_DIR/rust-server/target/release"
+# echo "Inspecting the build directory"
+# ls -l "$BUILD_DIR"
+# echo "Inspecting the rust server directory"
+# ls -l "$BUILD_DIR/rust-server"
+# echo "Inspecting the target directory"
+# ls -l "$BUILD_DIR/rust-server/target"
+# echo "Inspecting the release directory"
+# ls -l "$BUILD_DIR/rust-server/target/release"
 
-cp "$BUILD_DIR/rust-server/target/release/actix-to-do-server" "$BUILD_DIR/main" || exit 1
+cp "$BUILD_DIR/target/release/actix-to-do-server" "$BUILD_DIR/main" || exit 1
 # cp "$BUILD_DIR/rust-server/target/release/actix-to-do-server" "$BUILD_DIR/main" || exit 1
 rm -rf $BUILD_DIR/target
 rm -rf $BUILD_DIR/rust-server

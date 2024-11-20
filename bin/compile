@@ -21,8 +21,8 @@ NODE_DISTRO=linux-x64
 curl -fsSL https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-$NODE_DISTRO.tar.gz | tar -xz
 export PATH=$(pwd)/node-v$NODE_VERSION-$NODE_DISTRO/bin:$PATH
 
-echo "installing npm"
-curl -qL https://npmjs.org/install.sh | sh
+# echo "installing npm"
+# curl -qL https://npmjs.org/install.sh | sh
 
 echo "-----> Node.js version: $(node -v)"
 echo "-----> npm version: $(npm -v)"
@@ -44,7 +44,7 @@ echo "Inspecting build output..."
 ls -l "$BUILD_DIR"
 ls -l "$BUILD_DIR/rust-server"
 ls -l "$BUILD_DIR/rust-server/target"
-ls -l "$BUILD_DIR/rust-server/target/release"
+# ls -l "$BUILD_DIR/rust-server/target/release"
 
 cp "$BUILD_DIR/rust-server/target/release/actix-to-do-server" "$BUILD_DIR/main" || exit 1
 # cp "$BUILD_DIR/rust-server/target/release/actix-to-do-server" "$BUILD_DIR/main" || exit 1

@@ -29,17 +29,18 @@ echo "-----> npm version: $(npm -v)"
 
 echo "-----> frontend found"
 
-# Build frontend
-cd ./frontend
+echo "-----> Building frontend"
+cd "$BUILD_DIR/frontend" || exit 1
 npm install
 npm run build
-cd ..
+cd "$BUILD_DIR" || exit 1
 
-echo "       done"
-echo "-----> rust server found"
-
-# Build backend
+echo "       Frontend build complete"
+echo "-----> Building Rust server"
+cd "$BUILD_DIR/rust-server" || exit 1
 cargo build -p actix-to-do-server --release
-cp ./target/release/actix-to-do-server $BUILD_DIR
+cp "$BUILD_DIR/rust-server/target/release/actix-to-do-server" "$BUILD_DIR" || exit 1
+
+echo "       Rust server build complete"
 
 echo "       done"

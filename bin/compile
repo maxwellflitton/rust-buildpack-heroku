@@ -46,7 +46,8 @@ echo "Inspecting the rust server directory"
 ls -l "$BUILD_DIR/rust-server"
 echo "Inspecting the target directory"
 ls -l "$BUILD_DIR/rust-server/target"
-# ls -l "$BUILD_DIR/rust-server/target/release"
+echo "Inspecting the release directory"
+ls -l "$BUILD_DIR/rust-server/target/release"
 
 cp "$BUILD_DIR/rust-server/target/release/actix-to-do-server" "$BUILD_DIR/main" || exit 1
 # cp "$BUILD_DIR/rust-server/target/release/actix-to-do-server" "$BUILD_DIR/main" || exit 1

@@ -6,5 +6,5 @@ config:
 addons:
   - heroku-postgresql
 default_process_types:
-  web: ./actix-to-do-server
+  web: ./main
 EOF

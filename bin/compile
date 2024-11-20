@@ -7,16 +7,25 @@ BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
 
 # install dependencies
 
-echo "-----> installing dependencies"
+echo "-----> installing rust"
 
 curl https://sh.rustup.rs -sSf | sh -s -- -y
 export PATH="$HOME/.cargo/bin:$PATH"
 
+rustup default stable
+
+
+echo "-----> Installing Node.js..."
+NODE_VERSION=18.17.1
+NODE_DISTRO=linux-x64
+curl -fsSL https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-$NODE_DISTRO.tar.gz | tar -xz
+export PATH=$(pwd)/node-v$NODE_VERSION-$NODE_DISTRO/bin:$PATH
+
 echo "installing npm"
 curl -qL https://npmjs.org/install.sh | sh
 
-rustup default stable
-
+echo "-----> Node.js version: $(node -v)"
+echo "-----> npm version: $(npm -v)"
 
 echo "-----> frontend found"
 

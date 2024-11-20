@@ -50,6 +50,7 @@ cargo build -p actix-to-do-server --release
 # ls -l "$BUILD_DIR/rust-server/target/release"
 
 cp "$BUILD_DIR/target/release/actix-to-do-server" "$BUILD_DIR/main" || exit 1
+chmod +x "$BUILD_DIR/main"
 # cp "$BUILD_DIR/rust-server/target/release/actix-to-do-server" "$BUILD_DIR/main" || exit 1
 rm -rf $BUILD_DIR/target
 rm -rf $BUILD_DIR/rust-server

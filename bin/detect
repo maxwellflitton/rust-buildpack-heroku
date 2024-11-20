@@ -3,7 +3,7 @@
 BUILD_DIR=${1:-}
 
 if [ -f "$BUILD_DIR/Cargo.toml" ] && [ -f "$BUILD_DIR/frontend/package.json" ]; then
-    echo "Rust"
+    echo "\n\nRust "
     exit 0
 else
     exit 1

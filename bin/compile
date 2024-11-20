@@ -41,9 +41,13 @@ cd "$BUILD_DIR/rust-server" || exit 1
 cargo build -p actix-to-do-server --release
 
 echo "Inspecting build output..."
+ls -l "$BUILD_DIR"
+ls -l "$BUILD_DIR/rust-server"
+ls -l "$BUILD_DIR/rust-server/target"
 ls -l "$BUILD_DIR/rust-server/target/release"
 
 cp "$BUILD_DIR/rust-server/target/release/actix-to-do-server" "$BUILD_DIR/main" || exit 1
+# cp "$BUILD_DIR/rust-server/target/release/actix-to-do-server" "$BUILD_DIR/main" || exit 1
 rm -rf $BUILD_DIR/target
 rm -rf $BUILD_DIR/rust-server
 rm -rf $BUILD_DIR/frontend

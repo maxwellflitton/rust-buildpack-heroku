@@ -40,9 +40,11 @@ echo "-----> Building Rust server"
 cd "$BUILD_DIR/rust-server" || exit 1
 cargo build -p actix-to-do-server --release
 
-echo "Inspecting build output..."
+echo "Inspecting the build directory"
 ls -l "$BUILD_DIR"
+echo "Inspecting the rust server directory"
 ls -l "$BUILD_DIR/rust-server"
+echo "Inspecting the target directory"
 ls -l "$BUILD_DIR/rust-server/target"
 # ls -l "$BUILD_DIR/rust-server/target/release"
 
